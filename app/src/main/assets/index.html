@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Street View</title>
+    <style>
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+        border: 0px;
+      }
+      #street-view {
+        height: 100%;
+        border: 0px;
+      }
+      #map {
+        height: 100%;
+        border: 0px;
+      }
+    </style>
+</head>
+<body>
+<div id="map"></div>
+<div id="street-view"></div>
+
+<script>
+      var panorama;
+      var map;
+
+      function initialize(latitude,longitude) {
+      latitude = parseFloat(latitude);
+      longitude = parseFloat(longitude);
+
+      if(isNaN(latitude) || isNaN(longitude)) return;
+
+      var astorPlace = {lat: latitude, lng: longitude};
+      var newAstroPlace = {lat: latitude, lng: longitude};
+
+      var target = new google.maps.LatLng(latitude,longitude);
+      var sv = new google.maps.StreetViewService();
+
+      map = new google.maps.Map(document.getElementById('map'), {
+           center: astorPlace,
+           zoom: 1
+          });
+
+          // Set up the markers on the map
+      var cafeMarker = new google.maps.Marker({
+          position: newAstroPlace,
+          map: map,
+          icon: 'http://cdn.stays.io/staysio/location_map_pin.png',
+          title: 'Cafe'
+       });
+
+
+          // We get the map's default panorama and set up some defaults.
+
+      var pano = sv.getPanoramaByLocation(target, 50, function(result, status){
+           if (status == google.maps.StreetViewStatus.OK) {
+                panorama = map.getStreetView();
+                panorama.setPosition(astorPlace);
+                panorama.setOptions({addressControl:false, enableCloseButton : false});
+                panorama.setPov({
+                       heading: 135,
+                       pitch: 10
+                    });
+                 panorama.setVisible(true);
+                 androidResponse(true);
+               }else{
+                  androidResponse(false);
+               }
+            });
+      }
+
+      function androidResponse(status) {
+         if(status){
+            window.Android.streetViewLoadingSuccess("Loading success.");
+          }else{
+             window.Android.streetViewLoadingFailed("Loading failed");
+           }
+    }
+
+    </script>
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDR6UaivXZueoiYjOdZH2x2c8QWJ7AOyOU&callback=initialize">
+</script>
+</body>
+</html>
