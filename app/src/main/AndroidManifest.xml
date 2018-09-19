@@ -20,9 +20,6 @@
         android:theme="@style/AppTheme">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyAR2An7t6n_o-IIwuT8XbRsGLAjM39k7kA" />
-        <meta-data
-            android:name="com.google.android.maps.v2.API_KEY"
             android:value="AIzaSyDR6UaivXZueoiYjOdZH2x2c8QWJ7AOyOU" />
 
         <activity android:name=".MainActivity">

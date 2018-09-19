@@ -13,8 +13,8 @@ import android.widget.Toast;
 public class MainActivity extends AppCompatActivity {
     WebView myWebView;
 
-    private double lat = 23.815804;
-    private double lng = 90.404748;
+    private double lat = 23.7496;
+    private double lng = 90.3948;
     private static final String URL = "file:///android_asset/index.html";
 
     @Override
@@ -69,6 +69,6 @@ public class MainActivity extends AppCompatActivity {
 /*
 Latitude‎: ‎23.911522	DMS Lat‎: ‎23° 54' 41.4792'' N
         Longitude‎: ‎90.388962
-
+23.7496° N, 90.3948° E
 
         */

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "817952010885",
+    "firebase_url": "https://rentbyowner-production.firebaseio.com",
+    "project_id": "rentbyowner-production",
+    "storage_bucket": "rentbyowner-production.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:817952010885:android:f2b5f02de8bcbbe4",
+        "android_client_info": {
+          "package_name": "com.rentbyowner.android"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "817952010885-85ss8467hrvvc2n1jtmkdoqekiir09hj.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB1PXblsalGVjQHDI2YUEnUp4dwNs5ZQNc"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
